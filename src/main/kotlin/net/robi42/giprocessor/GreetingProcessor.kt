@@ -11,8 +11,8 @@ class GreetingProcessor {
 
     @StreamListener(Processor.INPUT)
     @SendTo(Processor.OUTPUT)
-    fun process(greeting: Greeting) =
-            greeting.copy(text = greeting.text.replace("Hello world", "Hello Spring Cloud Stream world"))
+    fun process(greeting: Greeting)
+            = greeting.copy(text = greeting.text.replace("Hello world", "Hello Spring Cloud Stream world"))
 
 }
 
