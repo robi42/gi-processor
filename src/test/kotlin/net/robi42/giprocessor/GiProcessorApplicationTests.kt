@@ -29,15 +29,15 @@ import javax.inject.Inject
     @Test fun `context loads`() {}
 
     @Test fun `sends greeting message`() {
-        val message = GenericMessage(Greeting(text = "Hi", timestamp = now()))
-        processor.output().send(message)
+        val sentMessage = GenericMessage(Greeting(text = "Hi", timestamp = now()))
+        processor.output().send(sentMessage)
 
         val receivedMessage = messageCollector
                 .forChannel(processor.output())
                 .poll()
 
         assertThat(receivedMessage.payload)
-                .isEqualTo(message.toJson())
+                .isEqualTo(sentMessage.toJson())
     }
 
     private fun GenericMessage<Greeting>.toJson()
