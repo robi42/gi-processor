@@ -1,10 +1,10 @@
 modelEncoding: UTF-8
 modelVersion: 4.0.0
 
-groupId: net.robi42
+groupId:    net.robi42
 artifactId: gi-processor
-version: 0.1.0-SNAPSHOT
-packaging: jar
+version:    0.1.0-SNAPSHOT
+packaging:  jar
 
 name: gi-processor
 description: Demo project for Spring Cloud Stream processors
@@ -29,18 +29,18 @@ properties: {
 dependencies:
 - {artifactId: spring-cloud-stream-binder-redis, groupId: org.springframework.cloud, version: '${spring-cloud-stream.version}'}
 #- {artifactId: spring-cloud-stream-binder-kafka, groupId: org.springframework.cloud} # -> Kafka
-- {artifactId: spring-boot-starter-security, groupId: org.springframework.boot}
-- {artifactId: kotlin-stdlib-jre8, groupId: org.jetbrains.kotlin, version: '${kotlin.version}'}
-- {artifactId: kotlin-reflect, groupId: org.jetbrains.kotlin, version: '${kotlin.version}'}
-- {artifactId: jackson-module-kotlin, groupId: com.fasterxml.jackson.module}
-- {artifactId: jackson-datatype-jsr310, groupId: com.fasterxml.jackson.datatype}
-- {artifactId: javax.inject, groupId: javax.inject, version: 1}
-- {artifactId: guava, groupId: com.google.guava, version: '${guava.version}'}
+- {artifactId: spring-boot-starter-security,     groupId: org.springframework.boot}
+- {artifactId: kotlin-stdlib-jre8,               groupId: org.jetbrains.kotlin, version: '${kotlin.version}'}
+- {artifactId: kotlin-reflect,                   groupId: org.jetbrains.kotlin, version: '${kotlin.version}'}
+- {artifactId: jackson-module-kotlin,            groupId: com.fasterxml.jackson.module}
+- {artifactId: jackson-datatype-jsr310,          groupId: com.fasterxml.jackson.datatype}
+- {artifactId: javax.inject,                     groupId: javax.inject, version: 1}
+- {artifactId: guava,                            groupId: com.google.guava, version: '${guava.version}'}
 
 - {artifactId: spring-cloud-stream-test-support, groupId: org.springframework.cloud, version: '${spring-cloud-stream.version}', scope: test}
 #- {artifactId: spring-cloud-stream-test-support, groupId: org.springframework.cloud, scope: test} # -> Kafka
-- {artifactId: spring-boot-starter-test, groupId: org.springframework.boot, scope: test}
-- {artifactId: mockito-kotlin, groupId: com.nhaarman, version: '${mockito-kotlin.version}', scope: test}
+- {artifactId: spring-boot-starter-test,         groupId: org.springframework.boot, scope: test}
+- {artifactId: mockito-kotlin,                   groupId: com.nhaarman, version: '${mockito-kotlin.version}', scope: test}
 
 # Can be used for replacing Spring Cloud Stream Redis with Kafka:
 #dependencyManagement:
@@ -54,21 +54,21 @@ build:
   sourceDirectory: ${project.basedir}/src/main/kotlin
   testSourceDirectory: ${project.basedir}/src/test/kotlin
   plugins:
-  - groupId: org.springframework.boot
+  - groupId:    org.springframework.boot
     artifactId: spring-boot-maven-plugin
     configuration: {finalName: '${project.name}'}
-  - groupId: org.jetbrains.kotlin
+  - groupId:    org.jetbrains.kotlin
     artifactId: kotlin-maven-plugin
-    version: ${kotlin.version}
+    version:    ${kotlin.version}
     configuration:
       compilerPlugins: {plugin: spring}
       jvmTarget: 1.8
     executions:
-    - goals: [compile]
-      id: compile
+    - id:    compile
       phase: compile
-    - goals: [test-compile]
-      id: test-compile
+      goals: [compile]
+    - id:    test-compile
       phase: test-compile
+      goals: [test-compile]
     dependencies:
         - {artifactId: kotlin-maven-allopen, groupId: org.jetbrains.kotlin, version: '${kotlin.version}'}
