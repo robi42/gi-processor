@@ -21,4 +21,4 @@ with event processing.
 docker run -p 6379:6379 redis
 ```
 
-Alternatively, Kafka can be used transparently, see `pom.xml`.
+Alternatively, Kafka can be used transparently, see `pom.yaml`.
