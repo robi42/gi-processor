@@ -10,9 +10,11 @@ spring:
 
   cloud.stream:
     bindings.input:
+      group: gi
       destination: greetings
       content-type: application/json
     bindings.output:
+      group: gi
       destination: transformed-greetings
       content-type: application/json
 
