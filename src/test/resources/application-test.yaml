@@ -1,5 +1,5 @@
 spring:
-  application.name: giprocessor-test
+  application.name: gi-processor-test
   main.banner-mode: "off"
 
 management.port: -1
