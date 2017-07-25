@@ -5,7 +5,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.cloud.stream.annotation.Bindings
 import org.springframework.cloud.stream.messaging.Processor
 import org.springframework.cloud.stream.test.binder.MessageCollector
 import org.springframework.messaging.support.GenericMessage
@@ -19,9 +18,7 @@ import javax.inject.Inject
 @Suppress("SpringKotlinAutowiring")
 @SpringBootTest class GiProcessorApplicationTests {
 
-    @Inject
-    @Bindings(GreetingProcessor::class)
-    private lateinit var processor: Processor
+    @Inject private lateinit var processor: Processor
 
     @Inject private lateinit var messageCollector: MessageCollector
     @Inject private lateinit var objectMapper: ObjectMapper
